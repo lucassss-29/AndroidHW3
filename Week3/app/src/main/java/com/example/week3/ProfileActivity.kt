@@ -7,54 +7,58 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.inflate
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.example.week3.databinding.ActivityProfileBinding
+import com.example.week3.databinding.EditprofileDialogBinding
 
 class ProfileActivity : AppCompatActivity() {
-    lateinit var editTextName : EditText
-    lateinit var editTextGmail : EditText
-    lateinit var editTextPhone : EditText
-    lateinit var nameTxt : TextView
+    private lateinit var binding : ActivityProfileBinding
+    private lateinit var viewModel : MainViewModel
+    private lateinit var viewModelFactory : MainViewModelFactory
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
         supportActionBar?.hide()
-        //val txtFullname = findViewById<TextView>(R.id.txtFullname)
-        val txtFullname = findViewById<TextView>(R.id.editTextTextPersonName)
-        val txtEmail = findViewById<TextView>(R.id.txtEmail)
-        val txtPhone = findViewById<TextView>(R.id.txtPhoneNumber)
-        editTextName = findViewById(R.id.editTextTextPersonName)
-        txtFullname.setOnClickListener { showDialog() }
-        txtEmail.setOnClickListener { showDialog() }
-        txtPhone.setOnClickListener { showDialog()  }
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_profile)
+
+        /*add data from login to here*/
+        viewModelFactory = MainViewModelFactory("Chau Chan Vi","cchanvi99@gmail.com","0835018510")
+        viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel::class.java)
+        binding.apply {
+            txtprofile.setOnClickListener { showDialog() }
+        }
+
+        binding.account = viewModel.account.value
+        viewModel.account.observe(this, Observer {account ->
+            binding.nameTxt.text = account.username
+            binding.editTextTextPersonName.setText(account.username)
+            binding.editEmail.setText(account.email)
+            binding.editTextPhone.setText(account.phoneNumber)
+        })
     }
 
     private fun showDialog() {
-
-        editTextName = findViewById(R.id.editTextTextPersonName)
-        editTextGmail = findViewById(R.id.editEmail)
-        editTextPhone = findViewById(R.id.editTextPhone)
-        nameTxt = findViewById(R.id.nameTxt)
-
         /*Set laytout */
-        val mDialogView= LayoutInflater.from(this).inflate(R.layout.editprofile_dialog,null)
-
-        /* Declare view */
-        val dialogeditTextGmail = mDialogView.findViewById<EditText>(R.id.dialogeditTextTextEmailAddress)
-        val dialogeditTextPhone  = mDialogView.findViewById<EditText>(R.id.dialogeditTextPhone)
-        val dialogeditTextName  = mDialogView.findViewById<EditText>(R.id.dialogeditTextTextPersonName)
-        val dialogBtnOK = mDialogView.findViewById<Button>(R.id.dialogOkbtn)
-        val dialogBtnCancle = mDialogView.findViewById<Button>(R.id.dialogCancleBtn)
-
-        /*Acction */
-        val alertDialog = AlertDialog.Builder(this).setView(mDialogView).setTitle("Edit Form")
-        val mAlertDialog = alertDialog.show()
-        dialogBtnOK.setOnClickListener {
-            editTextName.setText(dialogeditTextName.text.toString())
-            editTextGmail.setText(dialogeditTextGmail.text.toString())
-            editTextPhone.setText(dialogeditTextPhone.text.toString())
-            nameTxt.setText(dialogeditTextName.text.toString())
-            mAlertDialog.dismiss()
+        val dialogBinding : EditprofileDialogBinding? = DataBindingUtil.inflate(LayoutInflater.from(this),R.layout.editprofile_dialog,null,false)
+        val customDialog = AlertDialog.Builder(this,0).create()
+        customDialog.apply {
+            setView(dialogBinding?.root)
+            setCancelable(false)
+        }.show()
+        /* action OK */
+        dialogBinding?.dialogOkbtn?.setOnClickListener {
+            viewModel.setAccount(dialogBinding.dialogeditTextTextPersonName.text.toString(),
+                dialogBinding.dialogeditTextTextEmailAddress.text.toString(),
+                dialogBinding.dialogeditTextPhone.text.toString())
+            customDialog.dismiss()
         }
-        dialogBtnCancle.setOnClickListener { mAlertDialog.dismiss() }
+        /* action Cancle*/
+        dialogBinding?.dialogCancleBtn?.setOnClickListener {
+            customDialog.dismiss()
+        }
     }
     override fun onStart() {
         super.onStart()
