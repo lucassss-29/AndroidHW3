@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.week3">
+    package="com.example.flow">
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Week3">
+        android:theme="@style/Theme.Flow">
+        <activity android:name=".onboarding3Activity"></activity>
+        <activity android:name=".onboarding2Activity" />
+        <activity android:name=".onboarding1Activity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".Activity_Profile_ViTien" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="Welcome" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
