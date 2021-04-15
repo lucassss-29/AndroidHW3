@@ -16,6 +16,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var viewModel : MainViewModel
     private lateinit var viewModelFactory : MainViewModelFactory
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this@LoginActivity, R.layout.activity_login)
         viewModelFactory = MainViewModelFactory(Singleton.instance!!.userName,Singleton.instance!!.password,Singleton.instance!!.email,Singleton.instance!!.phoneNumber)
