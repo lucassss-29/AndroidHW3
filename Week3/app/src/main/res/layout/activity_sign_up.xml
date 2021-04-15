@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F8F8F8">
+
+        <TextView
+            android:id="@+id/tien_password"
+            android:layout_width="66dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:text="Password"
+            app:layout_constraintBottom_toTopOf="@+id/et_signup_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_signup_email"
+            app:layout_constraintVertical_bias="0.631" />
+
+        <TextView
+            android:id="@+id/tien_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.093"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="263dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="456dp"
+            android:layout_height="107dp"
+            app:srcCompat="@drawable/scroll_group_1" />
+
+        <TextView
+            android:id="@+id/tien_fullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="31dp"
+            android:layout_marginLeft="31dp"
+            android:layout_marginEnd="320dp"
+            android:layout_marginRight="320dp"
+            android:text="Full name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.258" />
+
+        <Button
+            android:id="@+id/button_signup"
+            android:layout_width="201dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="472dp"
+            android:background="@drawable/btn_signup"
+            android:text="Sign Up"
+            app:backgroundTint="#FE724C"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.438"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tien_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
+            android:text="Already have account?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.388"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_signup_password" />
+
+        <TextView
+            android:id="@+id/tien_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#FFFFFF"
+            android:text="Login"
+            android:textColor="@color/tien_text"
+            tools:layout_editor_absoluteX="265dp"
+            tools:layout_editor_absoluteY="534dp" />
+
+        <TextView
+            android:id="@+id/tien_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign up with"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="585dp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/group_17868"
+            tools:layout_editor_absoluteX="35dp"
+            tools:layout_editor_absoluteY="594dp" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/group_17864"
+            tools:layout_editor_absoluteX="6dp"
+            tools:layout_editor_absoluteY="594dp" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/group_17865"
+            tools:layout_editor_absoluteX="186dp"
+            tools:layout_editor_absoluteY="594dp" />
+
+        <EditText
+            android:id="@+id/et_signup_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/et_signup_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.149"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_signup_username" />
+
+        <EditText
+            android:id="@+id/et_signup_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/button_signup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.154"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_signup_username"
+            app:layout_constraintVertical_bias="0.68" />
+
+        <EditText
+            android:id="@+id/et_signup_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="31dp"
+            android:layout_marginLeft="31dp"
+            android:layout_marginEnd="171dp"
+            android:layout_marginRight="171dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.306" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
