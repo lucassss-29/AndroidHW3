@@ -9,7 +9,7 @@ class MainViewModel(username : String, email: String, phone: String) : ViewModel
         account.value = DataStore(username,email,phone)
     }
     fun setAccount(username: String,email: String, phone: String){
-        account.value?.username = username
+        account.value?.userName = username
         account.value?.email = email
         account.value?.phoneNumber = phone
         account.postValue(account.value)

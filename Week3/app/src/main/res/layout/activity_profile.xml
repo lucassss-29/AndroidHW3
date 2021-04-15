@@ -17,7 +17,7 @@
         tools:ignore="MissingDefaultResource">
 
         <EditText
-            android:id="@+id/editEmail"
+            android:id="@+id/et_profile_email"
             android:text="@{account.email}"
             android:layout_width="match_parent"
             android:layout_height="59dp"
@@ -38,7 +38,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/et_profile_phone"
             android:text="@{account.phoneNumber}"
             android:layout_width="match_parent"
             android:layout_height="59dp"
@@ -59,8 +59,8 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:text="@{account.username}"
+            android:id="@+id/et_profile_name"
+            android:text="@{account.userName}"
             android:layout_width="match_parent"
             android:layout_height="59dp"
             android:layout_marginStart="18dp"
@@ -75,7 +75,7 @@
             android:padding="8dp"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/editEmail"
+            app:layout_constraintBottom_toTopOf="@+id/et_profile_email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.555"
             app:layout_constraintStart_toStartOf="parent" />
@@ -91,7 +91,7 @@
             android:text="Full name"
             android:textColor="@color/grayTextview"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/et_profile_name"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -105,7 +105,7 @@
             android:text="E-mail"
             android:textColor="@color/grayTextview"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/editEmail"
+            app:layout_constraintBottom_toTopOf="@+id/et_profile_email"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -119,11 +119,11 @@
             android:text="Phone Number"
             android:textColor="@color/grayTextview"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
+            app:layout_constraintBottom_toTopOf="@+id/et_profile_phone"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/nameTxt"
+            android:id="@+id/text_profile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -136,7 +136,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
         <TextView
-            android:id="@+id/txtprofile"
+            android:id="@+id/text_edit_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sofiapromediumaz"
@@ -144,7 +144,7 @@
             android:textColor="@color/grayTextview"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameTxt" />
+            app:layout_constraintTop_toBottomOf="@+id/text_profile_name" />
 
         <Button
             android:id="@+id/button"

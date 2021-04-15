@@ -3,17 +3,12 @@ package com.example.week3
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.DataBindingUtil.inflate
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.week3.databinding.ActivityProfileBinding
-import com.example.week3.databinding.EditprofileDialogBinding
+import com.example.week3.databinding.DialogEditProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var binding : ActivityProfileBinding
@@ -28,35 +23,35 @@ class ProfileActivity : AppCompatActivity() {
         viewModelFactory = MainViewModelFactory("Chau Chan Vi","cchanvi99@gmail.com","0835018510")
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel::class.java)
         binding.apply {
-            txtprofile.setOnClickListener { showDialog() }
+            textEditProfile.setOnClickListener { showDialog() }
         }
 
         binding.account = viewModel.account.value
         viewModel.account.observe(this, Observer {account ->
-            binding.nameTxt.text = account.username
-            binding.editTextTextPersonName.setText(account.username)
-            binding.editEmail.setText(account.email)
-            binding.editTextPhone.setText(account.phoneNumber)
+            binding.textProfileName.text = account.userName
+            binding.etProfileName.setText(account.userName)
+            binding.etProfileEmail.setText(account.email)
+            binding.etProfilePhone.setText(account.phoneNumber)
         })
     }
 
     private fun showDialog() {
         /*Set laytout */
-        val dialogBinding : EditprofileDialogBinding? = DataBindingUtil.inflate(LayoutInflater.from(this),R.layout.editprofile_dialog,null,false)
+        val dialogBinding : DialogEditProfileBinding = DataBindingUtil.inflate(LayoutInflater.from(this),R.layout.dialog_edit_profile,null,false)
         val customDialog = AlertDialog.Builder(this,0).create()
         customDialog.apply {
             setView(dialogBinding?.root)
             setCancelable(false)
         }.show()
         /* action OK */
-        dialogBinding?.dialogOkbtn?.setOnClickListener {
-            viewModel.setAccount(dialogBinding.dialogeditTextTextPersonName.text.toString(),
-                dialogBinding.dialogeditTextTextEmailAddress.text.toString(),
-                dialogBinding.dialogeditTextPhone.text.toString())
+        dialogBinding?.buttonDialogOk?.setOnClickListener {
+            viewModel.setAccount(dialogBinding.etDialogName.text.toString(),
+                dialogBinding.etDialogEmail.text.toString(),
+                dialogBinding.etDialogPhone.text.toString())
             customDialog.dismiss()
         }
         /* action Cancle*/
-        dialogBinding?.dialogCancleBtn?.setOnClickListener {
+        dialogBinding?.buttonDialogCancel?.setOnClickListener {
             customDialog.dismiss()
         }
     }
