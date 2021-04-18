@@ -1,15 +1,14 @@
 package com.example.week3
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.util.Patterns
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.week3.databinding.ActivityLoginBinding
-import com.example.week3.databinding.ActivitySignUpBinding
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding : ActivityLoginBinding
@@ -22,7 +21,6 @@ class LoginActivity : AppCompatActivity() {
         viewModelFactory = MainViewModelFactory(Singleton.instance!!.userName,Singleton.instance!!.password,Singleton.instance!!.email,Singleton.instance!!.phoneNumber)
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel::class.java)
         binding.apply {
-
         }
         binding.account = viewModel.account.value
         viewModel.account.observe(this, Observer {account ->
