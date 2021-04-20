@@ -10,7 +10,7 @@ import com.example.week3.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding : LoginBinding
-    private lateinit var viewModel: LoginViewModel
+    private lateinit var viewModel:
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
