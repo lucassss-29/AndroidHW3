@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="account"
+            type="com.example.week3.DataStore" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/group_87"
+        tools:context=".LoginActivity">
+
+        <TextView
+            android:id="@+id/textViewLogin"
+            style="Sofia Pro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sofiaprosemiboldaz"
+            android:text="Login"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textViewEmail"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.144" />
+
+        <EditText
+            android:id="@+id/inputEmail"
+            android:layout_width="324dp"
+            android:layout_height="55dp"
+            android:background="@drawable/corner_edittext"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textViewPassword"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.304" />
+
+        <TextView
+            android:id="@+id/textViewPassword"
+            style="Sofia Pro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprodisplayregular"
+            android:text="Password"
+            android:textSize="20dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/inputPassword"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.411" />
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="324dp"
+            android:layout_height="55dp"
+            android:background="@drawable/corner_edittext"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.379"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.486" />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprodisplayregular"
+            android:text="E-mail"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/inputEmail"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.237" />
+
+        <TextView
+            android:id="@+id/textViewForgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprodisplayregular"
+            android:text="Forgot password?"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FE724C"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.581" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="170dp"
+            android:layout_height="66dp"
+            android:fontFamily="@font/sofiapromediumaz"
+            android:text="GOOGLE"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/group_17967"
+            app:iconSize="35dp"
+            app:iconTint="#FFFFFF"
+            app:iconTintMode="multiply"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.896"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.956"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/fbbutton"
+            android:layout_width="170dp"
+            android:layout_height="66dp"
+            android:fontFamily="@font/sofiapromediumaz"
+            android:text="FACEBOOK"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/group_17863"
+            app:iconSize="35dp"
+            app:iconTint="#FFFFFF"
+            app:iconTintMode="multiply"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.116"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.956"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account ?"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.789" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textColor="#FE724C"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.792"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.789" />
+
+        <TextView
+            android:id="@+id/textViewGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in with"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.847" />
+
+        <Button
+            android:id="@+id/buttonLogIn"
+            android:layout_width="263dp"
+            android:layout_height="69dp"
+            android:fontFamily="@font/sfprodisplayregular"
+            android:text="Login"
+            app:backgroundTint="#FE724C"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.711" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
